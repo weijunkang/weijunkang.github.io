@@ -1,24 +1,14 @@
-<div class="footer-col-wrapper">
+<!-- begin footer -->
+<footer class="footer">
+  <div class="container">
 
-  <div class="footer-col">
-    <div class="copyright">
-      {% assign year_from = site.posts[-1].date | date: '%Y' %}
-      {% assign year_to   = site.time | date: '%Y' %}
-      {% if year_from == nil or year_from == year_to %}
-        {% assign year_string = year_from %}
-      {% else %}
-        {% assign year_string = year_from | append: '&nbsp;' | append: '-' | append: '&nbsp;' | append: year_to %}
-      {% endif %}
-      {% if site.author %}
-      <p>Copyright © {{ year_string }} {{ site.author }}; All rights reserved.</p>
-      {% endif %}
-    </div>
-    <p>
-      Powered by <a href="https://jekyllrb.com/">Jekyll</a> & <a href="https://github.com/ngzhio/jekyll-theme-hamilton">Hamilton</a>
-    </p>
-  </div>
+    {% include subscribe.html %}
+    
+    {% include instagram.html %}
 
-  <div class="footer-col">
-    <p>{{ site.description | escape }}</p>
-  </div>
+    {% include contact-link.html %}
+
+    <div class="copyright">Copyright &copy; {{site.time | date: '%Y'}} <a href="/">{{ site.data.settings.title }}</a> — All right Reserved. Power by <a href="https://jekyllrb.com/">Jekyll</a>.</div>
 </div>
+</footer>
+<!-- end footer -->
